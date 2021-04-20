@@ -81,7 +81,9 @@ document.addEventListener("DOMContentLoaded", (e) => {
                 reviewImg.src = updatedCafeObj.reviews[updatedCafeObj.reviews.length - 1].userImage
                 let reviewEditBtn = document.createElement("button")
                 reviewEditBtn.innerText = "Edit"
-                cafeReviewLI.append(reviewText, reviewHeartRating, reviewImg, reviewEditBtn)
+                let reviewDeleteBtn = document.createElement("button")
+                reviewDeleteBtn.innerText = "Delete"
+                cafeReviewLI.append(reviewText, reviewHeartRating, reviewImg, reviewEditBtn, reviewDeleteBtn)
                 cafeReviewUL.append(cafeReviewLI)
 
                 //Update the Object in Memory
@@ -138,8 +140,35 @@ document.addEventListener("DOMContentLoaded", (e) => {
                             })
                         evt.target.reset()
                     })
+                    
 
                 })
+                reviewDeleteBtn.addEventListener("click", (evn) => {
+                    let newRevArr = displayedCafe.reviews.slice(0, -1)
+                    console.log(cafeReviewUL.lastChild)
+                    fetch("http://localhost:3000/cafes/1", {
+                            method: "PATCH",
+                            headers: {
+                              "Content-Type": "application/json",
+                            },
+                            body: JSON.stringify({
+                                reviews: newRevArr
+                            })
+                        })
+                            .then(resp => resp.json())
+                            .then((newCafeObj) => {
+                               // Update the DOM
+                                 reviewDeleteBtn.parentNode.remove()
+                                // let lastReview = cafeReviewUL.lastElementChild
+                                // lastReview.remove() 
+                                //Update the Object in Memory
+                                displayedCafe = newCafeObj
+                            })
+                    
+                                
+                                
+                })
+
             })
 
     })
