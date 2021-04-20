@@ -7,6 +7,12 @@ document.addEventListener("DOMContentLoaded", (e) => {
     let leaveReviewForm = document.querySelector(".review-form")
     let reviewTextarea = document.querySelector(".review-form > textarea")
     let cafeReviewUL = document.querySelector(".reviews")
+    // let userReviewRatingInput1 = document.querySelector("#input-heart-1")
+    // let userReviewRatingInput = document.querySelector("#input-heart-1")
+    // let userReviewRatingInput = document.querySelector("#input-heart-1")
+    // let userReviewRatingInput = document.querySelector("#input-heart-1")
+    // let userReviewRatingInput = document.querySelector("#input-heart-1")
+
     let displayedCafe = {}
 
 
@@ -49,7 +55,8 @@ document.addEventListener("DOMContentLoaded", (e) => {
 
         let lastId = lastObj.userId
 
-        //Function for heart rating.
+
+        Function for heart rating.
         let checkValue = ''
         function getHeart() {
             let radios = document.getElementsByName("user-heart");
@@ -64,16 +71,21 @@ document.addEventListener("DOMContentLoaded", (e) => {
         } //closing the function
 
         checkValue = getHeart()
-
+        console.log(checkValue)
+        console.log("Hello!")
+        // console.log(getHeart())
+        // console.log(checkValue)
 
         let userReviewInputObj = {
             userId: lastId + 1,
             userReview: userReviewInputString,
-            userRating: checkValue,
+            userRating: 5,
             userImage: "https://s3-media0.fl.yelpcdn.com/bphoto/yF67XONxES0imLkXaqJnGg/o.jpg"
         }
 
         newReviewArr.push(userReviewInputObj)
+
+
 
         //Make a PATCH fetch request
         fetch("http://localhost:3000/cafes/1", {
@@ -92,6 +104,8 @@ document.addEventListener("DOMContentLoaded", (e) => {
                 let cafeReviewLI = document.createElement("li")
                 let reviewText = document.createElement("p")
                 reviewText.innerText = userReviewInputString
+
+
                 let reviewHeartRating = document.createElement("span")
                 reviewHeartRating.innerText = updatedCafeObj.reviews[updatedCafeObj.reviews.length - 1].userRating
                 let reviewImg = document.createElement("img")
@@ -157,9 +171,10 @@ document.addEventListener("DOMContentLoaded", (e) => {
                             })
                         evt.target.reset()
                     })
-
-
                 })
+
+
+                //Adding an Event Listener to reviewDeleteBtn
                 reviewDeleteBtn.addEventListener("click", (evn) => {
                     let newRevArr = displayedCafe.reviews.slice(0, -1)
                     console.log(cafeReviewUL.lastChild)
@@ -181,15 +196,12 @@ document.addEventListener("DOMContentLoaded", (e) => {
                             //Update the Object in Memory
                             displayedCafe = newCafeObj
                         })
-
-
-
                 })
+            }) // Closing second .then()
 
-            })
+    }) // Closing leaveReviewForm Event Listener
 
-    })
+
 
 
 })
-//fixing

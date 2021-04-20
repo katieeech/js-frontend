@@ -49,27 +49,10 @@ document.addEventListener("DOMContentLoaded", (e) => {
 
         let lastId = lastObj.userId
 
-        //Function for heart rating.
-        let checkValue = ''
-        function getHeart() {
-            let radios = document.getElementsByName("user-heart");
-            console.log(radios)
-            for (let i = 0, length = radios.length; i < length; i++) {
-                if (radios[i].checked) {
-                    return radios[i].value;
-                    // only one radio can be logically checked, don't check the rest
-                    // break;
-                }
-            }
-        } //closing the function
-
-        checkValue = getHeart()
-
-
         let userReviewInputObj = {
             userId: lastId + 1,
             userReview: userReviewInputString,
-            userRating: checkValue,
+            userRating: 5,
             userImage: "https://s3-media0.fl.yelpcdn.com/bphoto/yF67XONxES0imLkXaqJnGg/o.jpg"
         }
 
@@ -98,9 +81,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
                 reviewImg.src = updatedCafeObj.reviews[updatedCafeObj.reviews.length - 1].userImage
                 let reviewEditBtn = document.createElement("button")
                 reviewEditBtn.innerText = "Edit"
-                let reviewDeleteBtn = document.createElement("button")
-                reviewDeleteBtn.innerText = "Delete"
-                cafeReviewLI.append(reviewText, reviewHeartRating, reviewImg, reviewEditBtn, reviewDeleteBtn)
+                cafeReviewLI.append(reviewText, reviewHeartRating, reviewImg, reviewEditBtn)
                 cafeReviewUL.append(cafeReviewLI)
 
                 //Update the Object in Memory
@@ -158,33 +139,9 @@ document.addEventListener("DOMContentLoaded", (e) => {
                         evt.target.reset()
                     })
 
-
                 })
-                reviewDeleteBtn.addEventListener("click", (evn) => {
-                    let newRevArr = displayedCafe.reviews.slice(0, -1)
-                    console.log(cafeReviewUL.lastChild)
-                    fetch("http://localhost:3000/cafes/1", {
-                        method: "PATCH",
-                        headers: {
-                            "Content-Type": "application/json",
-                        },
-                        body: JSON.stringify({
-                            reviews: newRevArr
-                        })
-                    })
-                        .then(resp => resp.json())
-                        .then((newCafeObj) => {
-                            // Update the DOM
-                            reviewDeleteBtn.parentNode.remove()
-                            // let lastReview = cafeReviewUL.lastElementChild
-                            // lastReview.remove() 
-                            //Update the Object in Memory
-                            displayedCafe = newCafeObj
-                        })
 
 
-
-                })
 
             })
 
@@ -192,4 +149,3 @@ document.addEventListener("DOMContentLoaded", (e) => {
 
 
 })
-//fixing
