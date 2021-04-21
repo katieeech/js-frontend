@@ -1,0 +1,224 @@
+.header-container {
+    font-size: 21px;
+    /* font-family: 'Roboto', sans-serif;
+     */
+    font-family: "Avenir Next", Avenir, Roboto, "Century Gothic", "Franklin Gothic Medium";;
+    font-weight: 400;
+    color: black;
+
+}
+
+.header-section { 
+     position:relative; 
+     display: block;
+
+     
+     border-bottom: 1px solid rgba(241, 241, 241, 0.9);
+     /* box-shadow: X Y BLUR SPREAD COLOR; */
+     box-shadow: 0 0 5px rgba(128,128,128, .95);
+     /* border-bottom: 1px solid rgba(1,161,221, .95); */
+     background: #fff;
+ }
+
+.header-section .inner {
+position:relative;
+box-sizing: border-box;
+height: 78px;
+}
+
+.header-section .website-name {
+    margin-left: 30px;
+    color: #01a1dd;
+    font-weight:bold;
+    font-size: 34px;
+}
+
+/* Align all the menus verticallu centered */
+.header-section .menu-group {
+    display:flex;
+    align-items: center;
+    height: 100%;
+}
+
+.float--left {
+    float: left;
+}
+
+.header-section .sign-group {
+    display:flex;
+}
+
+.float--right {
+    float: right;
+}
+/* div {
+    display: block;
+} */
+
+.header-section .main-menu{
+    display:flex;
+}
+
+.header-section .submenu{
+    display:flex;
+   
+}
+
+ol, ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.header-container .main-menu li a {
+    padding: 10px;
+    display: block;
+    color: #3c4146;
+}
+
+.header-container .main-menu li a:hover {
+    color: turquoise;
+}
+
+.header-container .submenu li a {
+    padding: 10px;
+    display: block;
+    color: #3c4146;
+}
+
+.header-container .submenu li a:hover {
+    color: white;
+    font-weight: bold;
+    background: turquoise;
+    border-radius: .25rem;
+}
+
+
+
+
+
+/* taking the header out from the cover photo */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+
+
+
+
+
+
+
+.cafe-main {
+    position: relative;
+    font-family: "Avenir Next", Avenir, Roboto, "Century Gothic", "Franklin Gothic Medium";;
+    color: black;
+    font-size: 25px;
+    height: 100vh;
+    width:100%;
+    /* display:flex; */
+    justify-content:center;
+    padding: 25px;
+}
+
+
+.cafe-main::before {
+    content: "";
+    /* background-image: url("../Images/bluestonelane-metrocenter.png"); */
+   background-image: url("../Images/BluestoneLane-BustSt.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center;
+    position: absolute;
+    opacity: 55%;
+    top:0px;
+    right:0px;
+    bottom: 0px;
+    left: 0px;
+
+}
+
+.cafe-main h1 {
+   position:relative;   /* important!! */
+   text-align: center;
+   color: white;
+   font-size: 65px;
+   font-weight: 900;
+   text-shadow: 4px 4px gray;
+}
+
+.cafe-main div {
+    position:relative;   /* important!! */
+    text-align: center;
+   color: black;
+   font-size: 25px; 
+   /* font-weight: bold; */
+
+}
+
+.nextCafeBtn {
+    /* display: inline-block; */
+
+    position:relative;
+    /* float:right;   */
+    /* This causes the h2 to shift to left */
+    margin-right: 80px;
+    margin-left:0;
+    border: 2px solid skyblue;
+    border-radius: .50rem;
+    background: skyblue;
+    /* turquoise */
+    color:white;
+    font-weight: bold;
+    /* line-height:40px; */
+    padding: 10px 10px;
+    font-size: 20px;
+    text-shadow: 1px 1px lightgrey;
+}
+
+
+
+/* Q2- button is shifting h2 away */
+.btn-heart-rating {
+color: #dc3545;
+border-color:white;
+border-width: 2px;
+}
+
+.btn {
+/* display: inline-block; */
+font-weight:400;
+/* line-height:1.5; */
+text-align: center;
+text-decoration: none;
+vertical-align: middle;
+background-color:#dc3545;
+border: 1px solid ;
+padding: .375rem .75rem;
+font-size: 1rem;
+border-radius: .25rem;
+transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+
+}
+
+
+
+.cafe-image-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cafe-image-container img {
+    max-width: 500px;
+    max-height: 500px;
+}
+
+
+.cafe-page .cafe-name {
+    text-align: center;
+    margin-left: 0px;
+}
