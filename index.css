@@ -1,0 +1,25 @@
+body{
+    background-color: burlywood;
+}
+.cafe-name {
+    font-family: 'Dancing Script', cursive;
+    font: xx-large;
+    color: sienna;
+    text-align: center;
+    text-shadow: 2px 2px black;
+}
+.cafe-address {
+    font-family: 'Dancing Script', cursive;
+    font: xx-large;
+    color:black;
+    text-align: center;
+    
+}
+.cafe-image-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+.cafe-image-container img {
+    max-width: 500px;
+    max-height: 500px;
+}
