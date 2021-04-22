@@ -121,7 +121,7 @@ a {
     content: "";
     /* background-image: url("../Images/bluestonelane-metrocenter.png"); */
    /* background-image: url("../Images/BluestoneLane-BustSt.jpeg"); */
-   background-image: url("../Images/CafeMainImage.jpeg");
+   background-image: url("Images/CafeMainImage.jpeg");
     background-repeat: no-repeat;
     background-size: cover; 
     background-position: center;
