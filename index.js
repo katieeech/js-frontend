@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
                 let cafeReviewLI = document.createElement("li")
                 let reviewText = document.createElement("p")
                 reviewText.innerText = storedCafeReviewObj.userReview
-                let reviewHeartRating = document.createElement("span")
+                let reviewHeartRating = document.createElement("div")
 
                 function getReviewHeart(reviewerHeart) {
 
@@ -89,7 +89,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
 
                 allRatingArr.push(parseInt(storedCafeReviewObj.userRating))
 
-                cafeReviewLI.append(reviewText, reviewHeartRating, reviewImg)
+                cafeReviewLI.append(reviewHeartRating, reviewText, reviewImg)
                 cafeReviewUL.append(cafeReviewLI)
 
             })
@@ -125,7 +125,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
 
         let lastId = lastObj.userId
 
-        
+
 
         //Function for heart rating.
         let checkValue = ''
@@ -170,7 +170,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
                 let cafeReviewLI = document.createElement("li")
                 let reviewText = document.createElement("p")
                 reviewText.innerText = userReviewInputString
-                let reviewHeartRating = document.createElement("span")
+                let reviewHeartRating = document.createElement("div")
 
                 // reviewHeartRating.innerText = updatedCafeObj.reviews[updatedCafeObj.reviews.length - 1].userRating
 
@@ -225,7 +225,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
                 getReviewerHeart(avgRating)
                 console.log(`inside patch: ${avgRating}`)
 
-                cafeReviewLI.append(reviewText, reviewHeartRating, reviewImg, reviewEditBtn, reviewDeleteBtn)
+                cafeReviewLI.append(reviewHeartRating, reviewText, reviewImg, reviewEditBtn, reviewDeleteBtn)
                 cafeReviewUL.append(cafeReviewLI)
 
                 //Update the Object in Memory
@@ -314,6 +314,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
             })
         console.log(`Second Global: ${avgRating}`)
 
+        evt.target.reset()
     }) //closing Global event listener
 
 
@@ -321,25 +322,9 @@ document.addEventListener("DOMContentLoaded", (e) => {
     console.log(`Third Global: ${avgRating}`)
 
 
-    //Append cafe info to the Top div
-    // let cafeTopPage = document.createElement("div.")
-    // cafeTopPage.class = "cafe-page"
-    // cafeTopPage.append(cafeName, cafeAddress, heartBtns, cafeImgContainer)
-    // // console.log(cafeTopPage)
-    // cafeTopPageDiv.append(cafeTopPage)
-
-    //Q1- pessimisitic? -fetch comes slower?
-
-
-
-
-
-
-
-
-
-
 
 })
+
+
 
 
