@@ -1,11 +1,11 @@
 document.addEventListener("DOMContentLoaded", (e) => {
     //stable elements
-    let cafeTopPageDiv = document.querySelector(".cafeTopPageDiv")
-    console.log(cafeTopPageDiv)
+    // let cafeTopPageDiv = document.querySelector(".cafeTopPageDiv")
+    // console.log(cafeTopPageDiv)
     let cafeName = document.querySelector(".cafe-name")
     let cafeAddress = document.querySelector(".cafe-address")
     let cafeImgContainer = document.querySelector(".cafe-image-container")
-    let cafeAvgHeartContainer = document.querySelector(".avg-cafe-hearts")
+    // let cafeAvgHeartContainer = document.querySelector(".avg-cafe-hearts")
     let heartBtns = document.querySelector(".btn-heart-rating")
     let allRatingArr = []
     let avgRating = 0
@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         console.log(storedAvg)
         if (storedAvg === 1) {
             document.querySelector(".btn1").style.color = "white";
+            // document.querySelector(".btn1").style.color = "white";
         } else if (storedAvg === 2) {
             document.querySelector(".btn1").style.color = "white";
             document.querySelector(".btn2").style.color = "white";
@@ -183,6 +184,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
                         reviewHeartRating.innerText = "❤️ ❤️ ❤️ ❤️ ❤️";
                     }
                 }
+
                 console.log(updatedCafeObj.reviews[updatedCafeObj.reviews.length - 1].userRating) //2
                 getReviewHeart(updatedCafeObj.reviews[updatedCafeObj.reviews.length - 1].userRating)
                 console.log(reviewHeartRating.innerText)
@@ -315,17 +317,14 @@ document.addEventListener("DOMContentLoaded", (e) => {
 
 
     //Append cafe info to the Top div
-    let cafeTopPage = document.createElement("div.")
-    cafeTopPage.class = "cafe-page"
-    cafeTopPage.append(cafeName, cafeAddress, heartBtns, cafeImgContainer)
-    // console.log(cafeTopPage)
-    cafeTopPageDiv.append(cafeTopPage)
+    // let cafeTopPage = document.createElement("div.")
+    // cafeTopPage.class = "cafe-page"
+    // cafeTopPage.append(cafeName, cafeAddress, heartBtns, cafeImgContainer)
+    // // console.log(cafeTopPage)
+    // cafeTopPageDiv.append(cafeTopPage)
 
     //Q1- pessimisitic? -fetch comes slower?
 
-    if (avgRating === 3) {
-        document.querySelector(".btn1").style.color = "green";
-    }
 
 
 
@@ -337,8 +336,5 @@ document.addEventListener("DOMContentLoaded", (e) => {
 
 
 })
-
-
-
 
 

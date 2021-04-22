@@ -1,8 +1,6 @@
 .header-container {
     font-size: 21px;
-    /* font-family: 'Roboto', sans-serif;
-     */
-    font-family: "Avenir Next", Avenir, Roboto, "Century Gothic", "Franklin Gothic Medium";;
+    font-family: "Lucida Console"; 
     font-weight: 400;
     color: black;
 
@@ -28,10 +26,11 @@ height: 78px;
 
 .header-section .website-name {
     margin-left: 30px;
-    color: #01a1dd;
+    color: #006241;
     font-weight:bold;
     font-size: 34px;
 }
+/* #01a1dd */
 
 /* Align all the menus verticallu centered */
 .header-section .menu-group {
@@ -79,7 +78,7 @@ a {
 }
 
 .header-container .main-menu li a:hover {
-    color: turquoise;
+    color: #006241;
 }
 
 .header-container .submenu li a {
@@ -89,13 +88,9 @@ a {
 }
 
 .header-container .submenu li a:hover {
-    color: white;
+    color: #006241;
     font-weight: bold;
-    background: turquoise;
-    border-radius: .25rem;
 }
-
-
 
 
 
@@ -109,16 +104,12 @@ a {
 
 
 
-
-
-
-
 .cafe-main {
     position: relative;
-    font-family: "Avenir Next", Avenir, Roboto, "Century Gothic", "Franklin Gothic Medium";;
+    font-family: Arial, Helvetica, sans-serif;
     color: black;
     font-size: 25px;
-    height: 100vh;
+    height: 100%;
     width:100%;
     /* display:flex; */
     justify-content:center;
@@ -129,12 +120,13 @@ a {
 .cafe-main::before {
     content: "";
     /* background-image: url("../Images/bluestonelane-metrocenter.png"); */
-   background-image: url("../Images/BluestoneLane-BustSt.jpeg");
+   /* background-image: url("../Images/BluestoneLane-BustSt.jpeg"); */
+   background-image: url("../Images/CafeMainImage.jpeg");
     background-repeat: no-repeat;
     background-size: cover; 
     background-position: center;
     position: absolute;
-    opacity: 55%;
+    opacity: 50%;
     top:0px;
     right:0px;
     bottom: 0px;
@@ -142,63 +134,58 @@ a {
 
 }
 
-.cafe-main h1 {
+.cafe-main .cafe-page {
    position:relative;   /* important!! */
    text-align: center;
-   color: white;
-   font-size: 65px;
-   font-weight: 900;
-   text-shadow: 4px 4px gray;
+   color: #050525;
+   font-size: 30px;
+   /* font-weight: 900; */
+   /* text-shadow: 4px 4px gray; */
 }
 
-.cafe-main div {
-    position:relative;   /* important!! */
-    text-align: center;
-   color: black;
-   font-size: 25px; 
-   /* font-weight: bold; */
 
+.nextCafeBtn-container {
+    display: inline-block; 
+    /* vertical-align: middle;
+    float: right; */
+    position:absolute;
+     top:65px; 
+     right:0px;
+     /* note that the cover photo has a padding inside */
 }
 
 .nextCafeBtn {
-    /* display: inline-block; */
-
     position:relative;
     /* float:right;   */
-    /* This causes the h2 to shift to left */
+    /* This causes the h2 to shift to left - solved with position:abs*/
     margin-right: 80px;
     margin-left:0;
-    border: 2px solid skyblue;
+    border: 2px solid #20B2AA;
     border-radius: .50rem;
-    background: skyblue;
-    /* turquoise */
+    background: #20B2AA;
     color:white;
-    font-weight: bold;
     /* line-height:40px; */
-    padding: 10px 10px;
+    padding: 7px 7px;
     font-size: 20px;
     text-shadow: 1px 1px lightgrey;
 }
 
 
 
-/* Q2- button is shifting h2 away */
-.btn-heart-rating {
-color: #dc3545;
-border-color:white;
-border-width: 2px;
-}
 
 .btn {
-/* display: inline-block; */
+ /* display: inline-block; */
+/* position:relative; */
+color: #CD5C5C;
 font-weight:400;
 /* line-height:1.5; */
 text-align: center;
 text-decoration: none;
 vertical-align: middle;
-background-color:#dc3545;
-border: 1px solid ;
-padding: .375rem .75rem;
+background-color:#CD5C5C;
+border: 1px solid #CD5C5C;
+border-color:#CD5C5C;
+padding: .2rem .45rem;
 font-size: 1rem;
 border-radius: .25rem;
 transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
@@ -210,15 +197,31 @@ transition: color .15s ease-in-out,background-color .15s ease-in-out,border-colo
 .cafe-image-container {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    
+    
 }
 
 .cafe-image-container img {
-    max-width: 500px;
-    max-height: 500px;
+    max-width: 400px;
+    max-height: 400px;
+    border-radius: 10%;
+    margin: 10px 0 0 10%;
+    flex-grow: 1;
 }
 
 
 .cafe-page .cafe-name {
     text-align: center;
     margin-left: 0px;
+    font-size: 50px;
+    margin-bottom: 0;
+    text-shadow: 2px 2px gainsboro;
+}
+
+
+
+.cafe-address {
+    display:inline-block;
+
 }
