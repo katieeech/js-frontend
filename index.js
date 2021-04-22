@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
     let avgRating = 0
     let leaveReviewForm = document.querySelector(".review-form")
     let reviewTextarea = document.querySelector(".review-form > textarea")
+    let reviewImgInput = document.querySelector("#url")
     let cafeReviewUL = document.querySelector(".reviews")
     let displayedCafe = {}
 
@@ -116,11 +117,15 @@ document.addEventListener("DOMContentLoaded", (e) => {
         evt.preventDefault()
         let userReviewInputString = reviewTextarea.value
 
+        let userReviewinputIMG = reviewImgInput.value
+
         let newReviewArr = displayedCafe.reviews
 
         let lastObj = displayedCafe.reviews[displayedCafe.reviews.length - 1]
 
         let lastId = lastObj.userId
+
+        
 
         //Function for heart rating.
         let checkValue = ''
@@ -143,7 +148,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
             userId: lastId + 1,
             userReview: userReviewInputString,
             userRating: checkValue,
-            userImage: "https://s3-media0.fl.yelpcdn.com/bphoto/yF67XONxES0imLkXaqJnGg/o.jpg"
+            userImage: userReviewinputIMG
         }
 
         newReviewArr.push(userReviewInputObj)
